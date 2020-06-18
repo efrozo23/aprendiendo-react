@@ -1,23 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/images/logo.svg';
+import './assets/css/App.css';
+
+//Importar componente
+import MiComponente from './components/MiComponente';
+
+function holaMundo(name, edad) {
+  var pres = (
+    <div>
+      <h2>Hola, soy... {name}</h2>
+      <h3>Tengo {edad}</h3>
+    </div>
+  );
+  return pres
+}
 
 function App() {
+
+  var name = 'Elkin Rozo';
+  console.log('Inicio app')
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hola bienvenido al curso
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {
+          holaMundo(name, 25)
+        }
+
+        <section className="componentes">
+          {console.log('Antes de iniciar componente')}
+          <MiComponente />
+        </section>
       </header>
     </div>
   );
